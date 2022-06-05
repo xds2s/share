@@ -213,8 +213,8 @@ function install_9hits() {
 #!/bin/bash
 while [[ ! \$(pidof 9hits) ]]; do
 	killall 9hits 9hbrowser 9htl exe
-	Xvfb :1 &
-	export DISPLAY=:1 && $INSTALL_DIR/9hitsv3-linux64/9hits --auto-start --single-process --no-sandbox --no-zygote --disable-crash-handler=true --disable-logging > /dev/null
+	Xvfb :2 &
+	export DISPLAY=:2 && $INSTALL_DIR/9hitsv3-linux64/9hits --auto-start --single-process --no-sandbox --no-zygote --disable-crash-handler=true --disable-logging > /dev/null
 	exit
 done
 EOL
@@ -228,8 +228,8 @@ EOL
 		fi
 		
 		pkill 9h ; pkill exe
-# 		Xvfb :1 &
-# 		export DISPLAY=:1 && 
+# 		Xvfb :2 &
+# 		export DISPLAY=:2 && 
     "$INSTALL_DIR/9hitsv3-linux64/9hits" $NH_ARGS && echo "9HITS WILL START WITHIN A MINUTE!" && pkill 9h
 	fi
 	
