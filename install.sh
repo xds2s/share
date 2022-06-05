@@ -228,8 +228,8 @@ EOL
 		fi
 		
 		pkill 9h ; pkill exe
-# 		Xvfb :2 &
-# 		export DISPLAY=:2 && 
+ 		Xvfb :2 &
+ 		export DISPLAY=:2 && 
     "$INSTALL_DIR/9hitsv3-linux64/9hits" $NH_ARGS && echo "9HITS WILL START WITHIN A MINUTE!" && pkill 9h
 	fi
 	
